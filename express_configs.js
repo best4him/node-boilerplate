@@ -2,9 +2,10 @@
 
 const bodyParser = require('body-parser')
 const compression = require('compression')
-const errorHandler = require('errorhandler')
+const morgan = require('morgan')
 
 module.exports = function (app) {
+  app.use(morgan('dev'))
   app.use(compression())
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(bodyParser.json())
@@ -13,6 +14,5 @@ module.exports = function (app) {
 
   if (env === 'development' || env === 'test') {
     app.use(require('cors')())
-    app.use(errorHandler()) // Error handler - has to be last
   }
 }

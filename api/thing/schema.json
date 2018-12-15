@@ -1,0 +1,17 @@
+{
+  "GET": {
+    "/api/things": {
+      "type": "object",
+      "additionalProperties": false
+    }
+  },
+  "POST": {
+    
+  },
+  "DELETE": {
+    
+  },
+  "PUT": {
+    
+  }
+}
